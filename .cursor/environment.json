@@ -1,0 +1,17 @@
+{
+  "name": "daily-tick",
+  "user": "ubuntu",
+  "terminals": [
+    {
+      "name": "static-server",
+      "command": "python3 -m http.server 8080",
+      "description": "Serves the static daily-tick site at http://localhost:8080"
+    }
+  ],
+  "ports": [
+    {
+      "name": "static-server",
+      "port": 8080
+    }
+  ]
+}
