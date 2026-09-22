@@ -20,22 +20,65 @@
     margin-inline: auto;
   }
   h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
-  .meta { color: #6b7280; font-size: 13px; margin: 6px 0 14px; line-height: 1.45; }
-  .day {
-    background: #111; color: #fff; border-radius: 14px;
-    padding: 12px 14px; margin-bottom: 14px; font-size: 13px; line-height: 1.45;
+  .quiet {
+    color: #9ca3af; font-size: 12px; margin: 6px 0 16px; line-height: 1.4;
+  }
+  .block { margin-bottom: 14px; }
+  .block > h2 {
+    margin: 0 0 8px; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.02em; text-transform: uppercase; color: #6b7280;
   }
   .card {
-    background: #fff; border-radius: 16px; padding: 6px 8px 10px;
+    background: #fff; border-radius: 16px; padding: 4px 8px 8px;
     border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,.04);
   }
-  .card h2 {
-    margin: 8px 10px 4px; font-size: 15px; font-weight: 700;
-    display: flex; align-items: center; gap: 8px;
+  .card.hero {
+    border: 1.5px solid #111;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  .card .head {
+    margin: 10px 8px 6px; font-size: 17px; font-weight: 700;
+    letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px;
   }
   .progress {
     margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280;
+    text-transform: none; letter-spacing: 0;
   }
+
+  /* Itinerary — time first, leave nested */
+  .slot {
+    padding: 12px 8px;
+    border-top: 1px solid #f0f0ec;
+  }
+  .slot:first-of-type { border-top: none; }
+  .slot .time {
+    font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums;
+    color: #111; letter-spacing: -0.01em;
+  }
+  .slot .what {
+    font-size: 16px; font-weight: 650; margin-top: 2px; line-height: 1.3;
+  }
+  .slot .where {
+    font-size: 13px; color: #6b7280; margin-top: 3px;
+  }
+  .slot .nest {
+    margin-top: 10px; margin-left: 2px;
+    padding: 10px 12px;
+    background: #f4f3ef; border-radius: 12px;
+    border-left: 3px solid #111;
+  }
+  .slot .nest .label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.04em; color: #6b7280;
+  }
+  .slot .nest .detail {
+    font-size: 14px; font-weight: 650; margin-top: 2px;
+  }
+  .slot .nest .hint {
+    font-size: 12px; color: #6b7280; margin-top: 2px;
+  }
+
+  /* Tick list */
   .job {
     display: block; width: 100%; text-align: left;
     border: none; background: transparent; font: inherit; color: inherit;
@@ -68,8 +111,9 @@
     font-size: 10px; font-weight: 700; color: #fff;
     padding: 4px 8px; border-radius: 999px; flex-shrink: 0; margin-top: 2px;
   }
+
   .script {
-    margin-top: 12px; background: #fff; border: 1px solid #e5e7eb;
+    margin-top: 4px; background: #fff; border: 1px solid #e5e7eb;
     border-radius: 16px; overflow: hidden;
   }
   .script summary {
@@ -90,9 +134,7 @@
     margin: 0 0 10px; white-space: pre-wrap;
   }
   .park { margin-top: 14px; font-size: 12px; color: #6b7280; line-height: 1.4; }
-  .actions {
-    margin-top: 16px; display: flex; gap: 8px;
-  }
+  .actions { margin-top: 16px; display: flex; gap: 8px; }
   .actions button {
     flex: 1; border: 1px solid #e5e7eb; background: #fff;
     border-radius: 12px; padding: 12px; font-size: 13px; font-weight: 600;
@@ -111,60 +153,67 @@
 </head>
 <body>
   <h1>Today · Tue 22 Sep</h1>
-  <div class="meta">Therapy 13:00 · 100 Bell St · leave ~12:30<br>Meds 10:00 · wrap hard work by 17:30</div>
-  <div class="day"><b>Shape:</b> short desk opener → Cadent before leaving → therapy → lunch → one chase after if energy</div>
+  <div class="quiet">Meds · wrap hard work by 17:30 — no ticks</div>
 
-  <div class="card">
-    <h2>Tick list <span class="progress" id="progress">0 / 4</span></h2>
-
-    <button type="button" class="job" data-id="parcel" aria-pressed="false">
-      <div class="row">
-        <div class="tick" aria-hidden="true"></div>
-        <div class="left">
-          <div class="title">1. Bring in Amazon parcel</div>
-          <div class="step">First: check door / hall for Aqara shade driver</div>
-          <div class="when">2 min · before meds kick in</div>
+  <section class="block">
+    <h2>On today</h2>
+    <div class="card hero">
+      <div class="head">What’s on</div>
+      <div class="slot">
+        <div class="time">13:00–13:55</div>
+        <div class="what">Therapy</div>
+        <div class="where">100 Bell Street</div>
+        <div class="nest">
+          <div class="label">Leave</div>
+          <div class="detail">By 12:30</div>
+          <div class="hint">Keys, phone, out the door</div>
         </div>
-        <span class="pill" style="background:#22c55e">Tiny</span>
       </div>
-    </button>
+    </div>
+  </section>
 
-    <button type="button" class="job" data-id="chris" aria-pressed="false">
-      <div class="row">
-        <div class="tick" aria-hidden="true"></div>
-        <div class="left">
-          <div class="title">2. Chase Chris — railing measurements</div>
-          <div class="step">First: open message, ask for the measurements</div>
-          <div class="when">5 min · 10:30–11:15</div>
-        </div>
-        <span class="pill" style="background:#3b82f6">Desk</span>
-      </div>
-    </button>
+  <section class="block">
+    <h2>Do today</h2>
+    <div class="card hero">
+      <div class="head">Tick list <span class="progress" id="progress">0 / 3</span></div>
 
-    <button type="button" class="job" data-id="cadent" aria-pressed="false">
-      <div class="row">
-        <div class="tick" aria-hidden="true"></div>
-        <div class="left">
-          <div class="title">3. Call Cadent Connections</div>
-          <div class="step">First: dial 0800 074 5788 — leaseholder script below</div>
-          <div class="when">20 min · before 12:30 · due Fri 25</div>
+      <button type="button" class="job" data-id="parcel" aria-pressed="false">
+        <div class="row">
+          <div class="tick" aria-hidden="true"></div>
+          <div class="left">
+            <div class="title">Bring in Amazon parcel</div>
+            <div class="step">First: check door / hall for Aqara shade driver</div>
+            <div class="when">2 min</div>
+          </div>
+          <span class="pill" style="background:#22c55e">Tiny</span>
         </div>
-        <span class="pill" style="background:#e85d4c">Due</span>
-      </div>
-    </button>
+      </button>
 
-    <button type="button" class="job" data-id="therapy" aria-pressed="false">
-      <div class="row">
-        <div class="tick" aria-hidden="true"></div>
-        <div class="left">
-          <div class="title">4. Leave for therapy</div>
-          <div class="step">Closing: keys, phone, out the door by 12:30</div>
-          <div class="when">13:00–13:55 · 100 Bell St</div>
+      <button type="button" class="job" data-id="chris" aria-pressed="false">
+        <div class="row">
+          <div class="tick" aria-hidden="true"></div>
+          <div class="left">
+            <div class="title">Chase Chris — railing measurements</div>
+            <div class="step">First: open message, ask for the measurements</div>
+            <div class="when">5 min · 10:30–11:15</div>
+          </div>
+          <span class="pill" style="background:#3b82f6">Desk</span>
         </div>
-        <span class="pill" style="background:#111">Fixed</span>
-      </div>
-    </button>
-  </div>
+      </button>
+
+      <button type="button" class="job" data-id="cadent" aria-pressed="false">
+        <div class="row">
+          <div class="tick" aria-hidden="true"></div>
+          <div class="left">
+            <div class="title">Call Cadent Connections</div>
+            <div class="step">First: dial 0800 074 5788 — script below</div>
+            <div class="when">Before 12:30 · due Fri 25</div>
+          </div>
+          <span class="pill" style="background:#e85d4c">Due</span>
+        </div>
+      </button>
+    </div>
+  </section>
 
   <details class="script">
     <summary>Cadent script</summary>
@@ -184,7 +233,7 @@
 
 <script>
 (function () {
-  var KEY = "ed-today-2026-09-22";
+  var KEY = "ed-today-2026-09-22-v2";
   var jobs = Array.prototype.slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   var toast = document.getElementById("toast");
