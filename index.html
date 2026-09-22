@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="theme-color" content="#f4f3ef"/>
+<title>Today · Tue 22 Sep</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+    background: #f4f3ef;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .meta { color: #6b7280; font-size: 13px; margin: 6px 0 14px; line-height: 1.45; }
+  .day {
+    background: #111; color: #fff; border-radius: 14px;
+    padding: 12px 14px; margin-bottom: 14px; font-size: 13px; line-height: 1.45;
+  }
+  .card {
+    background: #fff; border-radius: 16px; padding: 6px 8px 10px;
+    border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  .card h2 {
+    margin: 8px 10px 4px; font-size: 15px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .progress {
+    margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280;
+  }
+  .job {
+    display: block; width: 100%; text-align: left;
+    border: none; background: transparent; font: inherit; color: inherit;
+    border-top: 1px solid #f0f0ec; padding: 12px 8px; cursor: pointer;
+    border-radius: 12px;
+  }
+  .job:first-of-type { border-top: none; }
+  .job:active { background: #f8f7f3; }
+  .job.done .title { text-decoration: line-through; color: #9ca3af; }
+  .job.done .step, .job.done .when { color: #c4c4c4; }
+  .job.done .tick {
+    background: #22c55e; border-color: #22c55e;
+  }
+  .job.done .tick::after {
+    content: ""; position: absolute; left: 5px; top: 2px;
+    width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .row { display: flex; align-items: flex-start; gap: 12px; }
+  .tick {
+    position: relative;
+    width: 28px; height: 28px; border: 2.5px solid #9ca3af;
+    border-radius: 8px; flex-shrink: 0; margin-top: 1px;
+  }
+  .left { flex: 1; min-width: 0; }
+  .title { font-size: 15px; font-weight: 650; line-height: 1.3; }
+  .step { font-size: 13px; color: #4b5563; margin-top: 4px; line-height: 1.35; }
+  .when { font-size: 12px; color: #6b7280; margin-top: 3px; }
+  .pill {
+    font-size: 10px; font-weight: 700; color: #fff;
+    padding: 4px 8px; border-radius: 999px; flex-shrink: 0; margin-top: 2px;
+  }
+  .script {
+    margin-top: 12px; background: #fff; border: 1px solid #e5e7eb;
+    border-radius: 16px; overflow: hidden;
+  }
+  .script summary {
+    list-style: none; cursor: pointer; padding: 14px 16px;
+    font-size: 14px; font-weight: 650; display: flex; align-items: center;
+  }
+  .script summary::-webkit-details-marker { display: none; }
+  .script summary::after {
+    content: "›"; margin-left: auto; font-size: 18px; color: #9ca3af;
+    transform: rotate(90deg);
+  }
+  .script[open] summary::after { transform: rotate(-90deg); }
+  .script .body {
+    padding: 0 16px 16px; font-size: 13px; line-height: 1.5; color: #374151;
+  }
+  .script .say {
+    background: #f4f3ef; border-radius: 12px; padding: 12px;
+    margin: 0 0 10px; white-space: pre-wrap;
+  }
+  .park { margin-top: 14px; font-size: 12px; color: #6b7280; line-height: 1.4; }
+  .actions {
+    margin-top: 16px; display: flex; gap: 8px;
+  }
+  .actions button {
+    flex: 1; border: 1px solid #e5e7eb; background: #fff;
+    border-radius: 12px; padding: 12px; font-size: 13px; font-weight: 600;
+    color: #374151; font-family: inherit;
+  }
+  .actions button:active { background: #f3f4f6; }
+  .toast {
+    position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom));
+    transform: translateX(-50%) translateY(20px); opacity: 0;
+    background: #111; color: #fff; font-size: 13px; font-weight: 600;
+    padding: 10px 16px; border-radius: 999px; pointer-events: none;
+    transition: opacity .2s, transform .2s; z-index: 20;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+  <h1>Today · Tue 22 Sep</h1>
+  <div class="meta">Therapy 13:00 · 100 Bell St · leave ~12:30<br>Meds 10:00 · wrap hard work by 17:30</div>
+  <div class="day"><b>Shape:</b> short desk opener → Cadent before leaving → therapy → lunch → one chase after if energy</div>
+
+  <div class="card">
+    <h2>Tick list <span class="progress" id="progress">0 / 4</span></h2>
+
+    <button type="button" class="job" data-id="parcel" aria-pressed="false">
+      <div class="row">
+        <div class="tick" aria-hidden="true"></div>
+        <div class="left">
+          <div class="title">1. Bring in Amazon parcel</div>
+          <div class="step">First: check door / hall for Aqara shade driver</div>
+          <div class="when">2 min · before meds kick in</div>
+        </div>
+        <span class="pill" style="background:#22c55e">Tiny</span>
+      </div>
+    </button>
+
+    <button type="button" class="job" data-id="chris" aria-pressed="false">
+      <div class="row">
+        <div class="tick" aria-hidden="true"></div>
+        <div class="left">
+          <div class="title">2. Chase Chris — railing measurements</div>
+          <div class="step">First: open message, ask for the measurements</div>
+          <div class="when">5 min · 10:30–11:15</div>
+        </div>
+        <span class="pill" style="background:#3b82f6">Desk</span>
+      </div>
+    </button>
+
+    <button type="button" class="job" data-id="cadent" aria-pressed="false">
+      <div class="row">
+        <div class="tick" aria-hidden="true"></div>
+        <div class="left">
+          <div class="title">3. Call Cadent Connections</div>
+          <div class="step">First: dial 0800 074 5788 — leaseholder script below</div>
+          <div class="when">20 min · before 12:30 · due Fri 25</div>
+        </div>
+        <span class="pill" style="background:#e85d4c">Due</span>
+      </div>
+    </button>
+
+    <button type="button" class="job" data-id="therapy" aria-pressed="false">
+      <div class="row">
+        <div class="tick" aria-hidden="true"></div>
+        <div class="left">
+          <div class="title">4. Leave for therapy</div>
+          <div class="step">Closing: keys, phone, out the door by 12:30</div>
+          <div class="when">13:00–13:55 · 100 Bell St</div>
+        </div>
+        <span class="pill" style="background:#111">Fixed</span>
+      </div>
+    </button>
+  </div>
+
+  <details class="script">
+    <summary>Cadent script</summary>
+    <div class="body">
+      <div class="say">I'm a leaseholder in a four-flat converted house in N5. Three flats' gas meters are inside my flat; we want them moved to the common parts or an external wall — non-standard alteration. What's the quotation charge for three alterations, is VAT on top, is the survey included, what's the North London lead time, and does the application need the freeholder or can a leaseholder apply?</div>
+      Write down: fee · VAT? · survey included? · lead time · freeholder vs leaseholder.<br><br>
+      Closing: plug numbers into the Benjamin email in place of “£500 or so plus VAT”.
+    </div>
+  </details>
+
+  <div class="park">Parked: Fred door · Philippa · Ercol photos — after therapy only if you want one more.</div>
+
+  <div class="actions">
+    <button type="button" id="reset">Reset ticks</button>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  var KEY = "ed-today-2026-09-22";
+  var jobs = Array.prototype.slice.call(document.querySelectorAll(".job"));
+  var progress = document.getElementById("progress");
+  var toast = document.getElementById("toast");
+  var toastTimer;
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function save(state) {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function flash(msg) {
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 1200);
+  }
+  function render() {
+    var state = load();
+    var done = 0;
+    jobs.forEach(function (el) {
+      var on = !!state[el.dataset.id];
+      el.classList.toggle("done", on);
+      el.setAttribute("aria-pressed", on ? "true" : "false");
+      if (on) done++;
+    });
+    progress.textContent = done + " / " + jobs.length;
+  }
+
+  jobs.forEach(function (el) {
+    el.addEventListener("click", function () {
+      var state = load();
+      var id = el.dataset.id;
+      state[id] = !state[id];
+      save(state);
+      render();
+      flash(state[id] ? "Done" : "Unchecked");
+    });
+  });
+
+  document.getElementById("reset").addEventListener("click", function () {
+    save({});
+    render();
+    flash("Reset");
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
