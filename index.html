@@ -4,308 +4,125 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Tue 22 Sep</title>
+<title>Today · Wed 23 Sep</title>
 <style>
-  :root { color-scheme: light; }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  body {
-    margin: 0;
-    padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
-    background: #f4f3ef;
-    color: #1a1a1a;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
-    max-width: 520px;
-    margin-inline: auto;
-  }
+  body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+    background: #f4f3ef; color: #1a1a1a; font-family: -apple-system, system-ui, sans-serif; max-width: 520px; margin-inline: auto; }
   h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
-  .block { margin-bottom: 14px; }
-  .block > h2 {
-    margin: 0 0 8px; font-size: 13px; font-weight: 700;
-    letter-spacing: 0.02em; text-transform: uppercase; color: #6b7280;
-  }
-  .card {
-    background: #fff; border-radius: 16px; padding: 4px 8px 8px;
-    border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,.04);
-  }
-  .card.hero {
-    border: 1.5px solid #111;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
-  }
-  .card .head {
-    margin: 10px 8px 6px; font-size: 17px; font-weight: 700;
-    letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px;
-  }
-  .progress {
-    margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280;
-    text-transform: none; letter-spacing: 0;
-  }
-
-  /* Itinerary - time first, leave nested */
-  .slot {
-    padding: 12px 8px;
-    border-top: 1px solid #f0f0ec;
-  }
+  .quiet { color: #6b7280; font-size: 13px; margin: 6px 0 16px; line-height: 1.4; }
+  .card { background: #fff; border-radius: 16px; padding: 4px 8px 10px; border: 1.5px solid #111;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06); margin-bottom: 14px; }
+  .head { margin: 10px 8px 6px; font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
+    display: flex; align-items: center; }
+  .progress { margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280; }
+  .slot { padding: 12px 8px; border-top: 1px solid #f0f0ec; }
   .slot:first-of-type { border-top: none; }
-  .slot .time {
-    font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums;
-    color: #111; letter-spacing: -0.01em;
-  }
-  .slot .what {
-    font-size: 16px; font-weight: 650; margin-top: 2px; line-height: 1.3;
-  }
-  .slot .where {
-    font-size: 13px; color: #6b7280; margin-top: 3px;
-  }
-  .slot .nest {
-    margin-top: 10px; margin-left: 2px;
-    padding: 10px 12px;
-    background: #f4f3ef; border-radius: 12px;
-    border-left: 3px solid #111;
-  }
-  .slot .nest .label {
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.04em; color: #6b7280;
-  }
-  .slot .nest .detail {
-    font-size: 14px; font-weight: 650; margin-top: 2px;
-  }
-  .slot .nest .hint {
-    font-size: 12px; color: #6b7280; margin-top: 2px;
-  }
-
-  /* Tick list */
-  .job {
-    display: block; width: 100%; text-align: left;
-    border: none; background: transparent; font: inherit; color: inherit;
-    border-top: 1px solid #f0f0ec; padding: 12px 8px; cursor: pointer;
-    border-radius: 12px;
-  }
+  .time { font-size: 13px; font-weight: 700; }
+  .what { font-size: 16px; font-weight: 650; margin-top: 2px; }
+  .where { font-size: 13px; color: #6b7280; margin-top: 3px; }
+  .nest { margin-top: 10px; padding: 10px 12px; background: #f4f3ef; border-radius: 12px; border-left: 3px solid #111; }
+  .nest .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #6b7280; }
+  .nest .detail { font-size: 14px; font-weight: 650; margin-top: 2px; }
+  .job { display: block; width: 100%; text-align: left; border: none; background: transparent; font: inherit;
+    border-top: 1px solid #f0f0ec; padding: 12px 8px; border-radius: 12px; cursor: pointer; }
   .job:first-of-type { border-top: none; }
-  .job:active { background: #f8f7f3; }
   .job.done .title { text-decoration: line-through; color: #9ca3af; }
-  .job.done .step, .job.done .when { color: #c4c4c4; }
-  .job.done .tick {
-    background: #22c55e; border-color: #22c55e;
-  }
-  .job.done .tick::after {
-    content: ""; position: absolute; left: 5px; top: 2px;
-    width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
+  .job.done .tick { background: #22c55e; border-color: #22c55e; }
+  .job.done .tick::after { content: ""; position: absolute; left: 5px; top: 2px; width: 5px; height: 9px;
+    border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
   .row { display: flex; align-items: flex-start; gap: 12px; }
-  .tick {
-    position: relative;
-    width: 28px; height: 28px; border: 2.5px solid #9ca3af;
-    border-radius: 8px; flex-shrink: 0; margin-top: 1px;
-  }
+  .tick { position: relative; width: 28px; height: 28px; border: 2.5px solid #9ca3af; border-radius: 8px; flex-shrink: 0; }
   .left { flex: 1; min-width: 0; }
-  .title { font-size: 15px; font-weight: 650; line-height: 1.3; }
-  .step { font-size: 13px; color: #4b5563; margin-top: 4px; line-height: 1.35; }
+  .title { font-size: 15px; font-weight: 650; }
+  .step { font-size: 13px; color: #4b5563; margin-top: 4px; }
   .when { font-size: 12px; color: #6b7280; margin-top: 3px; }
-  .pill {
-    font-size: 10px; font-weight: 700; color: #fff;
-    padding: 4px 8px; border-radius: 999px; flex-shrink: 0; margin-top: 2px;
-  }
-
-  .script {
-    margin-top: 4px; background: #fff; border: 1px solid #e5e7eb;
-    border-radius: 16px; overflow: hidden;
-  }
-  .script summary {
-    list-style: none; cursor: pointer; padding: 14px 16px;
-    font-size: 14px; font-weight: 650; display: flex; align-items: center;
-  }
-  .script summary::-webkit-details-marker { display: none; }
-  .script summary::after {
-    content: "›"; margin-left: auto; font-size: 18px; color: #9ca3af;
-    transform: rotate(90deg);
-  }
-  .script[open] summary::after { transform: rotate(-90deg); }
-  .script .body {
-    padding: 0 16px 16px; font-size: 13px; line-height: 1.5; color: #374151;
-  }
-  .script .say {
-    background: #f4f3ef; border-radius: 12px; padding: 12px;
-    margin: 0 0 10px; white-space: pre-wrap;
-  }
-  .park { margin-top: 14px; font-size: 12px; color: #6b7280; line-height: 1.4; }
-  .actions { margin-top: 16px; display: flex; gap: 8px; }
-  .actions button {
-    flex: 1; border: 1px solid #e5e7eb; background: #fff;
-    border-radius: 12px; padding: 12px; font-size: 13px; font-weight: 600;
-    color: #374151; font-family: inherit;
-  }
-  .actions button:active { background: #f3f4f6; }
-  .toast {
-    position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom));
-    transform: translateX(-50%) translateY(20px); opacity: 0;
-    background: #111; color: #fff; font-size: 13px; font-weight: 600;
-    padding: 10px 16px; border-radius: 999px; pointer-events: none;
-    transition: opacity .2s, transform .2s; z-index: 20;
-  }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .pill { font-size: 10px; font-weight: 700; color: #fff; padding: 4px 8px; border-radius: 999px; flex-shrink: 0; }
+  .note { margin: 0 8px 10px; font-size: 12px; color: #6b7280; line-height: 1.4; }
 </style>
 </head>
 <body>
-  <h1>Today · Tue 22 Sep</h1>
+  <h1>Today · Wed 23 Sep</h1>
+  <div class="quiet">Leave 14:30 golf · Elvanse 10:00 · nothing hard after golf</div>
 
-  <section class="block">
-    <div class="card hero">
-      <div class="head">What have I got on today?</div>
-      <div class="slot">
-        <div class="time">13:00-13:55</div>
-        <div class="what">Therapy</div>
-        <div class="where">100 Bell Street</div>
-        <div class="nest">
-          <div class="label">Leave</div>
-          <div class="detail">By 12:30</div>
-          <div class="hint">Keys, phone, out the door</div>
-        </div>
+  <div class="card">
+    <div class="head">What have I got on today?</div>
+    <div class="slot">
+      <div class="time">14:30 → ~19:00</div>
+      <div class="what">Golf — Finchley with Guy</div>
+      <div class="where">Finchley Golf Club</div>
+      <div class="nest">
+        <div class="label">Leave</div>
+        <div class="detail">By 14:30</div>
       </div>
     </div>
-      <div class="slot">
-        <div class="time">14:30–18:00</div>
-        <div class="what">Zwift climb long ride</div>
-        <div class="where">3:30 · easy–steady (Coach)</div>
-      </div>
-
-  </section>
-
-  <section class="block">
-    <div class="card hero">
-      <div class="head">What do I need to do today? <span class="progress" id="progress">0 / 5</span></div>
-
-      
-      <button type="button" class="job" data-id="robin" aria-pressed="false">
-        <div class="row">
-          <div class="tick" aria-hidden="true"></div>
-          <div class="left">
-            <div class="title">Call Robin — Saturday visit</div>
-            <div class="step">First: dial Robin, ask about visiting Sat 26 Sep</div>
-            <div class="when">5 min · today</div>
-          </div>
-          <span class="pill" style="background:#3b82f6">Today</span>
-        </div>
-      </button>
-      <button type="button" class="job" data-id="zwift" aria-pressed="false">
-        <div class="row">
-          <div class="tick" aria-hidden="true"></div>
-          <div class="left">
-            <div class="title">Zwift climb long ride — 3:30</div>
-            <div class="step">First: bike shoes by trainer + open Zwift before Bell St</div>
-            <div class="when">Start ~14:30–15:00 after therapy · easy–steady · no AM Z2</div>
-          </div>
-          <span class="pill" style="background:#111">Coach</span>
-        </div>
-      </button>
-
-<button type="button" class="job" data-id="parcel" aria-pressed="false">
-        <div class="row">
-          <div class="tick" aria-hidden="true"></div>
-          <div class="left">
-            <div class="title">Bring in Amazon parcel</div>
-            <div class="step">First: check door / hall for Aqara shade driver</div>
-            <div class="when">2 min</div>
-          </div>
-          <span class="pill" style="background:#22c55e">Tiny</span>
-        </div>
-      </button>
-
-      <button type="button" class="job" data-id="chris" aria-pressed="false">
-        <div class="row">
-          <div class="tick" aria-hidden="true"></div>
-          <div class="left">
-            <div class="title">Chase Chris - railing measurements</div>
-            <div class="step">First: open message, ask for the measurements</div>
-            <div class="when">5 min · 10:30-11:15</div>
-          </div>
-          <span class="pill" style="background:#3b82f6">Desk</span>
-        </div>
-      </button>
-
-      <button type="button" class="job" data-id="benjamin" aria-pressed="false">
-        <div class="row">
-          <div class="tick" aria-hidden="true"></div>
-          <div class="left">
-            <div class="title">Benjamin email — Cadent figure</div>
-            <div class="step">First: replace "£500 or so plus VAT" with £684 incl VAT (do not add VAT again)</div>
-            <div class="when">Close-out from Cadent call</div>
-          </div>
-          <span class="pill" style="background:#e85d4c">Due</span>
-        </div>
-      </button>
+    <div class="slot">
+      <div class="time">Sat 26 · 08:00–13:00</div>
+      <div class="what">Drive to Devon</div>
     </div>
-  </section>
-
-  <details class="script">
-    <summary>Cadent notes (call done)</summary>
-    <div class="body">
-      <p><b>Survey cost: £684 incl VAT</b> (£570 + VAT). Call done 22 Sep. Lead time + applicant type blank. Closing step: Benjamin email.</p>
-      <div class="say">I'm a leaseholder in a four-flat converted house in N5. Three flats' gas meters are inside my flat; we want them moved to the common parts or an external wall - non-standard alteration. What's the quotation charge for three alterations, is VAT on top, is the survey included, what's the North London lead time, and does the application need the freeholder or can a leaseholder apply?</div>
-      Write down: fee · VAT? · survey included? · lead time · freeholder vs leaseholder.<br><br>
-      Closing: plug numbers into the Benjamin email in place of "£500 or so plus VAT".
+    <div class="slot">
+      <div class="time">Sun 27 · 09:45–17:00</div>
+      <div class="what">River Cottage — mushroom day</div>
+      <div class="where">EX13 8TB</div>
     </div>
-  </details>
-
-  <div class="park">Parked: Fred door · Philippa · Ercol photos - after therapy only if you want one more.</div>
-
-  <div class="actions">
-    <button type="button" id="reset">Reset ticks</button>
   </div>
-  <div class="toast" id="toast" role="status"></div>
+
+  <div class="card">
+    <div class="head">What do I need to do today? <span class="progress" id="progress">0 / 4</span></div>
+    <button type="button" class="job" data-id="robin" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="title">Call Robin — Saturday visit</div>
+        <div class="step">First: dial Robin, Sat 26 yes/no</div>
+        <div class="when">5 min · after ~10:30</div>
+      </div><span class="pill" style="background:#3b82f6">Today</span></div>
+    </button>
+    <button type="button" class="job" data-id="benjamin" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="title">Email Benjamin — Cadent £684</div>
+        <div class="step">First: send with £684 incl VAT (do not add VAT again)</div>
+        <div class="when">Peak 12:00–14:00 if still open</div>
+      </div><span class="pill" style="background:#e85d4c">Due</span></div>
+    </button>
+    <button type="button" class="job" data-id="hotel" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="title">Book Devon hotel</div>
+        <div class="step">First: open 3 options near Axminster / EX13, Fri–Sat night</div>
+        <div class="when">20 min</div>
+      </div><span class="pill" style="background:#111">Desk</span></div>
+    </button>
+    <button type="button" class="job" data-id="chris" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="title">Chase Chris — railing measurements</div>
+        <div class="step">First: message Chris for the numbers</div>
+        <div class="when">5 min</div>
+      </div><span class="pill" style="background:#3b82f6">Desk</span></div>
+    </button>
+    <p class="note">Z2 bike 60 moved (golf clash) — waiting Coach for new slot. Run Sustained Pace TBD with Coach.</p>
+  </div>
 
 <script>
-(function () {
-  var KEY = "ed-today-2026-09-22-v2";
-  var jobs = Array.prototype.slice.call(document.querySelectorAll(".job"));
+(function(){
+  var KEY = "ed-today-2026-09-23";
+  var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
-  var toast = document.getElementById("toast");
-  var toastTimer;
-
-  function load() {
-    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
-    catch (e) { return {}; }
-  }
-  function save(state) {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
-  }
-  function flash(msg) {
-    toast.textContent = msg;
-    toast.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 1200);
-  }
-  function render() {
-    var state = load();
-    var done = 0;
-    jobs.forEach(function (el) {
-      var on = !!state[el.dataset.id];
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
+  function save(s){ try { localStorage.setItem(KEY, JSON.stringify(s)); } catch(e){} }
+  function render(){
+    var s = load(), done = 0;
+    jobs.forEach(function(el){
+      var on = !!s[el.dataset.id];
       el.classList.toggle("done", on);
       el.setAttribute("aria-pressed", on ? "true" : "false");
       if (on) done++;
     });
     progress.textContent = done + " / " + jobs.length;
   }
-
-  jobs.forEach(function (el) {
-    el.addEventListener("click", function () {
-      var state = load();
-      var id = el.dataset.id;
-      state[id] = !state[id];
-      save(state);
-      render();
-      flash(state[id] ? "Done" : "Unchecked");
+  jobs.forEach(function(el){
+    el.addEventListener("click", function(){
+      var s = load(); s[el.dataset.id] = !s[el.dataset.id]; save(s); render();
     });
   });
-
-  document.getElementById("reset").addEventListener("click", function () {
-    save({});
-    render();
-    flash("Reset");
-  });
-
   render();
 })();
 </script>
