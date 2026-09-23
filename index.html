@@ -17,14 +17,6 @@
   .head { margin: 10px 8px 6px; font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
     display: flex; align-items: center; }
   .progress { margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280; }
-  .slot { padding: 12px 8px; border-top: 1px solid #f0f0ec; }
-  .slot:first-of-type { border-top: none; }
-  .time { font-size: 13px; font-weight: 700; }
-  .what { font-size: 16px; font-weight: 650; margin-top: 2px; }
-  .where { font-size: 13px; color: #6b7280; margin-top: 3px; }
-  .nest { margin-top: 10px; padding: 10px 12px; background: #f4f3ef; border-radius: 12px; border-left: 3px solid #111; }
-  .nest .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #6b7280; }
-  .nest .detail { font-size: 14px; font-weight: 650; margin-top: 2px; }
   .job { display: block; width: 100%; text-align: left; border: none; background: transparent; font: inherit;
     border-top: 1px solid #f0f0ec; padding: 12px 8px; border-radius: 12px; cursor: pointer; }
   .job:first-of-type { border-top: none; }
@@ -35,27 +27,26 @@
   .row { display: flex; align-items: flex-start; gap: 12px; }
   .tick { position: relative; width: 28px; height: 28px; border: 2.5px solid #9ca3af; border-radius: 8px; flex-shrink: 0; }
   .left { flex: 1; min-width: 0; }
-  .title { font-size: 15px; font-weight: 650; }
+  .time { font-size: 13px; font-weight: 700; color: #111; }
+  .title { font-size: 15px; font-weight: 650; margin-top: 2px; }
   .step { font-size: 13px; color: #4b5563; margin-top: 4px; }
-  .when { font-size: 12px; color: #6b7280; margin-top: 3px; }
-  .pill { font-size: 10px; font-weight: 700; color: #fff; padding: 4px 8px; border-radius: 999px; flex-shrink: 0; }
   .note { margin: 0 8px 10px; font-size: 12px; color: #6b7280; line-height: 1.4; }
+  .slot { padding: 12px 8px; border-top: 1px solid #f0f0ec; }
+  .slot:first-of-type { border-top: none; }
+  .what { font-size: 16px; font-weight: 650; margin-top: 2px; }
+  .where { font-size: 13px; color: #6b7280; margin-top: 3px; }
 </style>
 </head>
 <body>
   <h1>Today · Wed 23 Sep</h1>
-  <div class="quiet">Leave 14:30 golf · no bike today · tonight: shoes by trainer for Thu Z2</div>
+  <div class="quiet">One task per block · golf was yesterday · next: Robin</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">14:30 → ~19:00</div>
-      <div class="what">Golf — Finchley with Guy</div>
-      <div class="where">Finchley Golf Club</div>
-      <div class="nest">
-        <div class="label">Leave</div>
-        <div class="detail">By 14:30</div>
-      </div>
+      <div class="time">Thu 24 · 09:00–10:00</div>
+      <div class="what">AM Z2 bike 60</div>
+      <div class="where">Zwift OK · shoes by trainer tonight</div>
     </div>
     <div class="slot">
       <div class="time">Sat 26 · 08:00–13:00</div>
@@ -69,48 +60,48 @@
   </div>
 
   <div class="card">
-    <div class="head">What do I need to do today? <span class="progress" id="progress">0 / 5</span></div>
+    <div class="head">Time blocks <span class="progress" id="progress">0 / 5</span></div>
+    <p class="note">One task per slot. Tick when done.</p>
     <button type="button" class="job" data-id="robin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">13:40–13:50</div>
         <div class="title">Call Robin — Saturday visit</div>
         <div class="step">First: dial Robin, Sat 26 yes/no</div>
-        <div class="when">5 min · after ~10:30</div>
-      </div><span class="pill" style="background:#3b82f6">Today</span></div>
+      </div></div>
     </button>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">13:50–14:20</div>
         <div class="title">Email Benjamin — Cadent £684</div>
         <div class="step">First: send with £684 incl VAT (do not add VAT again)</div>
-        <div class="when">Peak 12:00–14:00 if still open</div>
-      </div><span class="pill" style="background:#e85d4c">Due</span></div>
+      </div></div>
     </button>
     <button type="button" class="job" data-id="hotel" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">14:20–14:50</div>
         <div class="title">Book Devon hotel</div>
-        <div class="step">First: open 3 options near Axminster / EX13, Fri–Sat night</div>
-        <div class="when">20 min</div>
-      </div><span class="pill" style="background:#111">Desk</span></div>
+        <div class="step">First: open 3 options near Axminster / EX13, Fri–Sat</div>
+      </div></div>
     </button>
     <button type="button" class="job" data-id="chris" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">14:50–15:00</div>
         <div class="title">Chase Chris — railing measurements</div>
         <div class="step">First: message Chris for the numbers</div>
-        <div class="when">5 min</div>
-      </div><span class="pill" style="background:#3b82f6">Desk</span></div>
+      </div></div>
     </button>
     <button type="button" class="job" data-id="shoes" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="title">Tonight — bike shoes by trainer</div>
-        <div class="step">First: put shoes next to the trainer for Thu AM Z2</div>
-        <div class="when">2 min · tonight</div>
-      </div><span class="pill" style="background:#111">Tonight</span></div>
+        <div class="time">21:00–21:05</div>
+        <div class="title">Bike shoes by trainer</div>
+        <div class="step">First: shoes next to trainer for Thu AM Z2</div>
+      </div></div>
     </button>
-    <p class="note">No bike today (golf). Thu AM Z2 bike 60 locked. Run Sustained Pace only if done before ~13:30 leave-prep; else Fri. Was: No bike today. Thu AM Z2 bike 60 (09:00). Run Sustained Pace only if finishable before ~13:30 leave-prep; else Fri.</p>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-23";
+  var KEY = "ed-today-2026-09-23-v2";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
