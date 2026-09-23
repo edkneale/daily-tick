@@ -30,7 +30,6 @@
   .time { font-size: 13px; font-weight: 700; color: #111; }
   .title { font-size: 15px; font-weight: 650; margin-top: 2px; }
   .step { font-size: 13px; color: #4b5563; margin-top: 4px; }
-  .note { margin: 0 8px 10px; font-size: 12px; color: #6b7280; line-height: 1.4; }
   .slot { padding: 12px 8px; border-top: 1px solid #f0f0ec; }
   .slot:first-of-type { border-top: none; }
   .what { font-size: 16px; font-weight: 650; margin-top: 2px; }
@@ -39,15 +38,19 @@
 </head>
 <body>
   <h1>Today · Wed 23 Sep</h1>
-  <div class="quiet">One task per block · golf was yesterday · next: Robin</div>
+  <div class="quiet">One task per block · weekend is upcoming, not today</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">Thu 24 · 09:00–10:00</div>
-      <div class="what">AM Z2 bike 60</div>
-      <div class="where">Zwift OK · shoes by trainer tonight</div>
+      <div class="time">16:00–17:00</div>
+      <div class="what">Z2 bike 60</div>
+      <div class="where">Zwift OK · easy spin</div>
     </div>
+  </div>
+
+  <div class="card">
+    <div class="head">Coming up</div>
     <div class="slot">
       <div class="time">Sat 26 · 08:00–13:00</div>
       <div class="what">Drive to Devon</div>
@@ -60,8 +63,7 @@
   </div>
 
   <div class="card">
-    <div class="head">Time blocks <span class="progress" id="progress">0 / 5</span></div>
-    <p class="note">One task per slot. Tick when done.</p>
+    <div class="head">Do today <span class="progress" id="progress">0 / 5</span></div>
     <button type="button" class="job" data-id="robin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">13:40–13:50</div>
@@ -80,7 +82,7 @@
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">14:20–14:50</div>
         <div class="title">Book Devon hotel</div>
-        <div class="step">First: open 3 options near Axminster / EX13, Fri–Sat</div>
+        <div class="step">First: 3 options near Axminster / EX13, Fri–Sat</div>
       </div></div>
     </button>
     <button type="button" class="job" data-id="chris" aria-pressed="false">
@@ -90,18 +92,18 @@
         <div class="step">First: message Chris for the numbers</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="shoes" aria-pressed="false">
+    <button type="button" class="job" data-id="z2" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">21:00–21:05</div>
-        <div class="title">Bike shoes by trainer</div>
-        <div class="step">First: shoes next to trainer for Thu AM Z2</div>
+        <div class="time">16:00–17:00</div>
+        <div class="title">Z2 bike 60</div>
+        <div class="step">First: shoes on, easy spin (Zwift OK)</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-23-v2";
+  var KEY = "ed-today-2026-09-23-v3";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
