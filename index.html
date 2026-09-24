@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Wed 23 Sep</title>
+<title>Today · Thu 24 Sep</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -34,23 +34,24 @@
   .slot:first-of-type { border-top: none; }
   .what { font-size: 16px; font-weight: 650; margin-top: 2px; }
   .where { font-size: 13px; color: #6b7280; margin-top: 3px; }
+  .empty { padding: 12px 8px; font-size: 14px; color: #6b7280; }
 </style>
 </head>
 <body>
-  <h1>Today · Wed 23 Sep</h1>
-  <div class="quiet">One task per block · weekend is upcoming, not today</div>
+  <h1>Today · Thu 24 Sep</h1>
+  <div class="quiet">One task per block · weekend prep today, guest prep tomorrow</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
-    <div class="slot">
-      <div class="time">16:00–17:00</div>
-      <div class="what">Z2 bike 60</div>
-      <div class="where">Zwift OK · easy spin</div>
-    </div>
+    <div class="empty">Nothing fixed — clear calendar</div>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
+    <div class="slot">
+      <div class="time">Fri 25 · 10:00–14:00</div>
+      <div class="what">Guest prep — Rich + Freddy</div>
+    </div>
     <div class="slot">
       <div class="time">Sat 26 · 08:00–13:00</div>
       <div class="what">Drive to Devon</div>
@@ -66,44 +67,44 @@
     <div class="head">Do today <span class="progress" id="progress">0 / 5</span></div>
     <button type="button" class="job" data-id="robin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">13:40–13:50</div>
+        <div class="time">10:30–10:40</div>
         <div class="title">Call Robin — Saturday visit</div>
         <div class="step">First: dial Robin, Sat 26 yes/no</div>
       </div></div>
     </button>
+    <button type="button" class="job" data-id="hotel" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">10:40–11:20</div>
+        <div class="title">Book Devon hotel</div>
+        <div class="step">First: 3 options near Axminster / EX13</div>
+      </div></div>
+    </button>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">13:50–14:20</div>
+        <div class="time">11:20–11:50</div>
         <div class="title">Email Benjamin — Cadent £684</div>
         <div class="step">First: send with £684 incl VAT (do not add VAT again)</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="hotel" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">14:20–14:50</div>
-        <div class="title">Book Devon hotel</div>
-        <div class="step">First: 3 options near Axminster / EX13, Fri–Sat</div>
-      </div></div>
-    </button>
     <button type="button" class="job" data-id="chris" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">14:50–15:00</div>
+        <div class="time">14:00–14:15</div>
         <div class="title">Chase Chris — railing measurements</div>
         <div class="step">First: message Chris for the numbers</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="z2" aria-pressed="false">
+    <button type="button" class="job" data-id="train" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">16:00–17:00</div>
-        <div class="title">Z2 bike 60</div>
-        <div class="step">First: shoes on, easy spin (Zwift OK)</div>
+        <div class="time">16:00–16:45</div>
+        <div class="title">Training — confirm with Coach</div>
+        <div class="step">First: was Wed Z2 done? then do today’s session</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-23-v3";
+  var KEY = "ed-today-2026-09-24-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
