@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Fri 25 Sep</title>
+<title>Today · Sat 26 Sep</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -34,94 +34,60 @@
   .slot:first-of-type { border-top: none; }
   .what { font-size: 16px; font-weight: 650; margin-top: 2px; }
   .where { font-size: 13px; color: #6b7280; margin-top: 3px; }
-  .empty { padding: 12px 8px; font-size: 14px; color: #6b7280; }
+  .nested { font-size: 13px; color: #4b5563; margin-top: 6px; padding-left: 10px; border-left: 2px solid #e5e7eb; }
 </style>
 </head>
 <body>
-  <h1>Today · Fri 25 Sep</h1>
-  <div class="quiet">Z2 before 09 · Robin + hotel · guest prep 10–14 · peak waived</div>
+  <h1>Today · Sat 26 Sep</h1>
+  <div class="quiet">Drive day · Rich + Freddy at flat · travel/rest</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">10:00–12:00</div>
-      <div class="what">Guest prep — tidy house</div>
-      <div class="where">Living · kitchen · bath · don’t touch gas meters</div>
-    </div>
-    <div class="slot">
-      <div class="time">12:00–13:00</div>
-      <div class="what">Guest prep — make beds</div>
-    </div>
-    <div class="slot">
-      <div class="time">13:00–14:00</div>
-      <div class="what">Guest prep — towels keys wifi</div>
-      <div class="where">Capstone emergency 020 3210 3010 on the note</div>
+      <div class="time">08:00–13:00</div>
+      <div class="what">Drive to Devon</div>
+      <div class="where">Flexible hold · hotel booked</div>
+      <div class="nested">Leave: bag + keys + charger in the car, then go</div>
     </div>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Sat 26 · 08:00–13:00</div>
-      <div class="what">Drive to Devon</div>
-      <div class="where">Rich + Freddy at the flat</div>
-    </div>
-    <div class="slot">
       <div class="time">Sun 27 · 09:45–17:00</div>
       <div class="what">River Cottage — mushroom day</div>
-      <div class="where">EX13 8TB · booking #37600</div>
+      <div class="where">EX13 8TB · booking #37600 · layers + boots</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 6</span></div>
-    <button type="button" class="job" data-id="z2" aria-pressed="false">
+    <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
+    <button type="button" class="job" data-id="leave" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">08:00–09:00</div>
-        <div class="title">AM Z2 Endurance 60 (Zwift)</div>
-        <div class="step">First: shoes on trainer, open Zwift — skip if past ~08:30</div>
+        <div class="time">08:00–08:20</div>
+        <div class="title">Final check + leave</div>
+        <div class="step">First: bag + keys + phone charger in the car</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="robin" aria-pressed="false">
+    <button type="button" class="job" data-id="drive" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">09:00–09:10</div>
-        <div class="title">Call Robin — Saturday visit</div>
-        <div class="step">First: dial Robin, Sat 26 yes/no + timing</div>
+        <div class="time">08:20–13:00</div>
+        <div class="title">Drive to Devon</div>
+        <div class="step">First: set nav to hotel / EX13 area</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="hotel" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">09:10–09:55</div>
-        <div class="title">Book Devon hotel</div>
-        <div class="step">First: 3 options near Axminster / EX13, then book one</div>
-      </div></div>
-    </button>
-    <button type="button" class="job" data-id="tidy" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">10:00–12:00</div>
-        <div class="title">Guest prep — tidy house</div>
-        <div class="step">First: empty dishwasher + bins, then wipe surfaces</div>
-      </div></div>
-    </button>
-    <button type="button" class="job" data-id="beds" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">12:00–13:00</div>
-        <div class="title">Guest prep — make beds</div>
-        <div class="step">First: confirm which beds Rich + Freddy use</div>
-      </div></div>
-    </button>
-    <button type="button" class="job" data-id="kit" aria-pressed="false">
+    <button type="button" class="job" data-id="settle" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">13:00–14:00</div>
-        <div class="title">Guest prep — towels keys wifi</div>
-        <div class="step">First: towels out, then Wi‑Fi card by router/kettle</div>
+        <div class="title">Check in + settle</div>
+        <div class="step">First: check-in, bag down, water</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-25-v1";
+  var KEY = "ed-today-2026-09-26-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
