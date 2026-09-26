@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#f4f3ef"/>
+<title>To-buy</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 14px max(28px, env(safe-area-inset-bottom));
+    background: #f4f3ef; color: #1a1a1a; font-family: -apple-system, system-ui, sans-serif; max-width: 560px; margin-inline: auto; }
+  h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .quiet { color: #6b7280; font-size: 13px; margin: 6px 0 18px; line-height: 1.35; }
+  .lane { margin-bottom: 16px; }
+  .lane-head { display: flex; align-items: center; gap: 8px; margin: 0 2px 8px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .dot { width: 10px; height: 10px; border-radius: 999px; flex-shrink: 0; }
+  .count { margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280; text-transform: none; letter-spacing: 0; }
+  .lane.high .dot { background: #ef4444; }
+  .lane.med .dot { background: #f59e0b; }
+  .lane.low .dot { background: #94a3b8; }
+  .lane.high .lane-head { color: #b91c1c; }
+  .lane.med .lane-head { color: #b45309; }
+  .lane.low .lane-head { color: #64748b; }
+  .card { background: #fff; border-radius: 14px; padding: 12px 14px; margin-bottom: 8px;
+    border: 1.5px solid #111; border-left-width: 6px; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+  .lane.high .card { border-left-color: #ef4444; }
+  .lane.med .card { border-left-color: #f59e0b; }
+  .lane.low .card { border-left-color: #94a3b8; }
+  .top { display: flex; align-items: flex-start; gap: 10px; }
+  .icon { font-size: 20px; line-height: 1.2; flex-shrink: 0; }
+  .body { flex: 1; min-width: 0; }
+  .name { font-size: 15px; font-weight: 650; letter-spacing: -0.01em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill { font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: #f3f4f6; color: #374151; }
+  .pill.cost { background: #ecfdf5; color: #047857; }
+  .pill.tbd { background: #fff7ed; color: #c2410c; }
+  .pill.tag { background: #eff6ff; color: #1d4ed8; }
+  .pill.status { background: #f1f5f9; color: #475569; }
+  .foot { margin-top: 18px; font-size: 12px; color: #9ca3af; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <h1>To-buy</h1>
+  <div class="quiet">Colour = priority. Cost + tag on each card. Weigh High against runway.</div>
+
+  <section class="lane high">
+    <div class="lane-head"><span class="dot"></span> High <span class="count">3 open</span></div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">🧂</span><div class="body">
+        <div class="name">PH salt tabs</div>
+        <div class="meta">
+          <span class="pill tbd">£ TBD</span>
+          <span class="pill tag">Fuel</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">💧</span><div class="body">
+        <div class="name">PH 1500 sachets</div>
+        <div class="meta">
+          <span class="pill cost">£10.99 / 8</span>
+          <span class="pill tag">Fuel</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">⚡</span><div class="body">
+        <div class="name">PH PF 30 gels</div>
+        <div class="meta">
+          <span class="pill cost">£9.49 / 4</span>
+          <span class="pill tag">Fuel</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="lane med">
+    <div class="lane-head"><span class="dot"></span> Medium <span class="count">3 open</span></div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">🪵</span><div class="body">
+        <div class="name">Outdoor varnish</div>
+        <div class="meta">
+          <span class="pill tbd">£ TBD</span>
+          <span class="pill tag">Garden</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">🪑</span><div class="body">
+        <div class="name">Wicker paint + varnish</div>
+        <div class="meta">
+          <span class="pill tbd">£ TBD</span>
+          <span class="pill tag">Garden</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">🗄️</span><div class="body">
+        <div class="name">IKEA Pax 30cm addition</div>
+        <div class="meta">
+          <span class="pill tbd">£ TBD</span>
+          <span class="pill tag">Bedroom</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="lane low">
+    <div class="lane-head"><span class="dot"></span> Low <span class="count">2 open</span></div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">🪧</span><div class="body">
+        <div class="name">House name plaque</div>
+        <div class="meta">
+          <span class="pill tbd">£ TBD</span>
+          <span class="pill tag">Admin</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="top"><span class="icon" aria-hidden="true">💡</span><div class="body">
+        <div class="name">IKEA smart switches</div>
+        <div class="meta">
+          <span class="pill tbd">£ TBD</span>
+          <span class="pill tag">Smart</span>
+          <span class="pill status">To buy</span>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <div class="foot">Source of truth also in to-buy.md · Ask Alfred to add / buy / bump priority</div>
+</body>
+</html>
