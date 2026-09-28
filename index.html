@@ -39,7 +39,7 @@
 </head>
 <body>
   <h1>Today · Mon 28 Sep</h1>
-  <div class="quiet">Z2 run + art · cut run for Battersea leave · Cadent + Chris desk</div>
+  <div class="quiet">Z2 run + art · Aldi shop · Cadent + Chris desk</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
@@ -71,7 +71,14 @@
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 4</span></div>
+    <div class="head">Do today <span class="progress" id="progress">0 / 5</span></div>
+    <button type="button" class="job" data-id="aldi" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">Before run</div>
+        <div class="title">Aldi shop</div>
+        <div class="step">First: open <a href="shop.html" onclick="event.stopPropagation()">shop checklist</a> · N4 1ED</div>
+      </div></div>
+    </button>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">10:30–11:15</div>
@@ -104,7 +111,7 @@
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-28-v1";
+  var KEY = "ed-today-2026-09-28-v2";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
