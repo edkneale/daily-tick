@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Sat 26 Sep</title>
+<title>Today · Mon 28 Sep</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,56 +38,73 @@
 </style>
 </head>
 <body>
-  <h1>Today · Sat 26 Sep</h1>
-  <div class="quiet">Drive day · Rich + Freddy at flat · travel/rest</div>
+  <h1>Today · Mon 28 Sep</h1>
+  <div class="quiet">Z2 run + art · cut run for Battersea leave · Cadent + Chris desk</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">08:00–13:00</div>
-      <div class="what">Drive to Devon</div>
-      <div class="where">Flexible hold · hotel booked</div>
-      <div class="nested">Leave: bag + keys + charger in the car, then go</div>
+      <div class="time">14:30</div>
+      <div class="what">Eat before 2h run</div>
+      <div class="where">Carbs + light protein · hydrate</div>
+    </div>
+    <div class="slot">
+      <div class="time">16:00–~17:30</div>
+      <div class="what">Run 2h easy–steady (Z2)</div>
+      <div class="where">Fuel ~50–60g carbs/h · cut early for art</div>
+    </div>
+    <div class="slot">
+      <div class="time">18:30–21:15</div>
+      <div class="what">Art class</div>
+      <div class="where">Battersea London Fine Art Studios, Lavender Hill</div>
+      <div class="nested">Leave: aim ~17:15–17:30 if run cut short</div>
     </div>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Sun 27 · 09:45–17:00</div>
-      <div class="what">River Cottage — mushroom day</div>
-      <div class="where">EX13 8TB · booking #37600 · layers + boots</div>
+      <div class="time">Tue 29 · 13:00</div>
+      <div class="what">Therapy</div>
+      <div class="where">100 Bell St NW1 6SL</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
-    <button type="button" class="job" data-id="leave" aria-pressed="false">
+    <div class="head">Do today <span class="progress" id="progress">0 / 4</span></div>
+    <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">08:00–08:20</div>
-        <div class="title">Final check + leave</div>
-        <div class="step">First: bag + keys + phone charger in the car</div>
+        <div class="time">10:30–11:15</div>
+        <div class="title">Email Benjamin — Cadent</div>
+        <div class="step">First: open/send quote questions on the £684 survey</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="drive" aria-pressed="false">
+    <button type="button" class="job" data-id="chris" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">08:20–13:00</div>
-        <div class="title">Drive to Devon</div>
-        <div class="step">First: set nav to hotel / EX13 area</div>
+        <div class="time">11:30–12:00</div>
+        <div class="title">Chase Chris — railing</div>
+        <div class="step">First: message Chris for the railing numbers</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="settle" aria-pressed="false">
+    <button type="button" class="job" data-id="run" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">13:00–14:00</div>
-        <div class="title">Check in + settle</div>
-        <div class="step">First: check-in, bag down, water</div>
+        <div class="time">16:00–~17:30</div>
+        <div class="title">Z2 run (cut for art)</div>
+        <div class="step">First: shoes on, start watch, easy out the door</div>
+      </div></div>
+    </button>
+    <button type="button" class="job" data-id="art" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">18:30–21:15</div>
+        <div class="title">Art class</div>
+        <div class="step">First: leave for Battersea with kit</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-26-v1";
+  var KEY = "ed-today-2026-09-28-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
