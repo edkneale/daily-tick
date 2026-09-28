@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#f4f3ef"/>
+<title>Aldi · Mon 28</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+    background: #f4f3ef; color: #1a1a1a; font-family: -apple-system, system-ui, sans-serif; max-width: 520px; margin-inline: auto; }
+  h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .quiet { color: #6b7280; font-size: 13px; margin: 6px 0 16px; line-height: 1.4; }
+  .nav { font-size: 14px; font-weight: 650; margin-bottom: 12px; }
+  .nav a { color: #111; text-decoration: none; border-bottom: 1.5px solid #111; }
+  .card { background: #fff; border-radius: 16px; padding: 4px 8px 10px; border: 1.5px solid #111;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06); margin-bottom: 14px; }
+  .head { margin: 10px 8px 6px; font-size: 17px; font-weight: 700; letter-spacing: -0.02em;
+    display: flex; align-items: center; }
+  .progress { margin-left: auto; font-size: 12px; font-weight: 600; color: #6b7280; }
+  .job { display: block; width: 100%; text-align: left; border: none; background: transparent; font: inherit;
+    border-top: 1px solid #f0f0ec; padding: 12px 8px; border-radius: 12px; cursor: pointer; }
+  .job:first-of-type { border-top: none; }
+  .job.done .title { text-decoration: line-through; color: #9ca3af; }
+  .job.done .tick { background: #22c55e; border-color: #22c55e; }
+  .job.done .tick::after { content: ""; position: absolute; left: 5px; top: 2px; width: 5px; height: 9px;
+    border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .row { display: flex; align-items: flex-start; gap: 12px; }
+  .tick { position: relative; width: 28px; height: 28px; border: 2.5px solid #9ca3af; border-radius: 8px; flex-shrink: 0; }
+  .left { flex: 1; min-width: 0; }
+  .title { font-size: 15px; font-weight: 650; margin-top: 2px; }
+  .step { font-size: 13px; color: #4b5563; margin-top: 4px; }
+  .flag { font-size: 13px; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 12px; padding: 10px 12px; margin-bottom: 14px; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <div class="nav"><a href="./">← Today</a></div>
+  <h1>Aldi · Mon 28</h1>
+  <div class="quiet">Window → Fri lunch · Finsbury Park N4 1ED · fridge already has eggs 8, potatoes, veg, yogurt, granary</div>
+  <div class="flag">PF gels / PH 1500 often not at Aldi — jelly sweets + Lucozade OK for Mon run; PH online separate.</div>
+
+  <div class="card">
+    <div class="head">Protein <span class="progress" data-section="protein">0 / 5</span></div>
+    <button type="button" class="job" data-id="chicken" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Chicken thighs boneless — 1 kg</div></div></div></button>
+    <button type="button" class="job" data-id="salmon-bacon" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Smoked salmon OR bacon — 1 pack</div><div class="step">Breakfast</div></div></div></button>
+    <button type="button" class="job" data-id="eggs" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Eggs — 6 more</div><div class="step">Optional if stretching 8</div></div></div></button>
+    <button type="button" class="job" data-id="yogurt" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Greek yogurt — 1 kg extra</div><div class="step">If current pot is small</div></div></div></button>
+    <button type="button" class="job" data-id="cottage" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Cottage cheese OR protein yogurt — 2 pots</div></div></div></button>
+  </div>
+
+  <div class="card">
+    <div class="head">Carbs / breakfast <span class="progress" data-section="carbs">0 / 6</span></div>
+    <button type="button" class="job" data-id="milk" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Milk — 2 L</div></div></div></button>
+    <button type="button" class="job" data-id="oats" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Porridge oats — 1 kg</div><div class="step">Or skip if bread only</div></div></div></button>
+    <button type="button" class="job" data-id="bananas" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Bananas — 1 bunch (~8–10)</div></div></div></button>
+    <button type="button" class="job" data-id="berries" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Berries — 1 pack</div><div class="step">If in</div></div></div></button>
+    <button type="button" class="job" data-id="rice" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Microwave rice pouches — 6</div><div class="step">Or dry rice 1 kg</div></div></div></button>
+    <button type="button" class="job" data-id="wraps" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Tortilla wraps — 1 pack</div><div class="step">Fri travel</div></div></div></button>
+  </div>
+
+  <div class="card">
+    <div class="head">Veg top-up <span class="progress" data-section="veg">0 / 3</span></div>
+    <button type="button" class="job" data-id="broccoli" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Broccoli OR green beans — 1 pack</div></div></div></button>
+    <button type="button" class="job" data-id="tomatoes" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Cherry tomatoes — 1 pack</div></div></div></button>
+    <button type="button" class="job" data-id="spinach" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Extra spinach/leaves — 1 bag</div><div class="step">If needed midweek</div></div></div></button>
+  </div>
+
+  <div class="card">
+    <div class="head">Mon 2h run <span class="progress" data-section="run">0 / 3</span></div>
+    <button type="button" class="job" data-id="gels" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Energy gels OR jelly babies — 4–6</div><div class="step">~30 g C each</div></div></div></button>
+    <button type="button" class="job" data-id="electro" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Sports drink OR electrolyte tabs — 2 L</div></div></div></button>
+    <button type="button" class="job" data-id="chocmilk" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Chocolate milk — 1 L</div><div class="step">Post-run</div></div></div></button>
+  </div>
+
+  <div class="card">
+    <div class="head">Staples if empty <span class="progress" data-section="staples">0 / 3</span></div>
+    <button type="button" class="job" data-id="oil" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Olive oil / cooking oil</div></div></div></button>
+    <button type="button" class="job" data-id="butter" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Butter</div></div></div></button>
+    <button type="button" class="job" data-id="pb" aria-pressed="false"><div class="row"><div class="tick"></div><div class="left"><div class="title">Peanut butter — 1 jar</div></div></div></button>
+  </div>
+
+<script>
+(function(){
+  var KEY = "ed-aldi-2026-09-28-v1";
+  var jobs = [].slice.call(document.querySelectorAll(".job"));
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
+  function save(s){ try { localStorage.setItem(KEY, JSON.stringify(s)); } catch(e){} }
+  function render(){
+    var s = load();
+    jobs.forEach(function(el){
+      var on = !!s[el.dataset.id];
+      el.classList.toggle("done", on);
+      el.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.querySelectorAll(".card").forEach(function(card){
+      var prog = card.querySelector(".progress");
+      if (!prog) return;
+      var items = card.querySelectorAll(".job");
+      var done = 0;
+      items.forEach(function(el){ if (el.classList.contains("done")) done++; });
+      prog.textContent = done + " / " + items.length;
+    });
+  }
+  jobs.forEach(function(el){
+    el.addEventListener("click", function(){
+      var s = load(); s[el.dataset.id] = !s[el.dataset.id]; save(s); render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
