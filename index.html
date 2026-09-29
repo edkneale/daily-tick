@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Mon 28 Sep</title>
+<title>Today · Tue 29 Sep</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,47 +38,35 @@
 </style>
 </head>
 <body>
-  <h1>Today · Mon 28 Sep</h1>
-  <div class="quiet">Z2 run + art · Aldi shop · Cadent + Chris desk</div>
+  <h1>Today · Tue 29 Sep</h1>
+  <div class="quiet">Therapy · Cadent + Chris desk before leave</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">14:30</div>
-      <div class="what">Eat before 2h run</div>
-      <div class="where">Carbs + light protein · hydrate</div>
-    </div>
-    <div class="slot">
-      <div class="time">16:00–~17:30</div>
-      <div class="what">Run 2h easy–steady (Z2)</div>
-      <div class="where">Fuel ~50–60g carbs/h · cut early for art</div>
-    </div>
-    <div class="slot">
-      <div class="time">18:30–21:15</div>
-      <div class="what">Art class</div>
-      <div class="where">Battersea London Fine Art Studios, Lavender Hill</div>
-      <div class="nested">Leave: aim ~17:15–17:30 if run cut short</div>
+      <div class="time">13:00–14:45</div>
+      <div class="what">Therapy</div>
+      <div class="where">100 Bell St, London NW1 6SL</div>
+      <div class="nested">Leave: aim ~12:25 from N5</div>
     </div>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Tue 29 · 13:00</div>
-      <div class="what">Therapy</div>
-      <div class="where">100 Bell St NW1 6SL</div>
+      <div class="time">Wed 30 · 10:00</div>
+      <div class="what">Haircut — ESHK Barbican</div>
+      <div class="where">Leave 9:40</div>
+    </div>
+    <div class="slot">
+      <div class="time">Thu 1 Oct · morning</div>
+      <div class="what">Golf with Paddy &amp; Guy</div>
+      <div class="where">Finchley Golf Club</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 5</span></div>
-    <button type="button" class="job" data-id="aldi" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">Before run</div>
-        <div class="title">Aldi shop</div>
-        <div class="step">First: open <a href="shop.html" onclick="event.stopPropagation()">shop checklist</a> · N4 1ED</div>
-      </div></div>
-    </button>
+    <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">10:30–11:15</div>
@@ -93,25 +81,18 @@
         <div class="step">First: message Chris for the railing numbers</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="run" aria-pressed="false">
+    <button type="button" class="job" data-id="therapy" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">16:00–~17:30</div>
-        <div class="title">Z2 run (cut for art)</div>
-        <div class="step">First: shoes on, start watch, easy out the door</div>
-      </div></div>
-    </button>
-    <button type="button" class="job" data-id="art" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">18:30–21:15</div>
-        <div class="title">Art class</div>
-        <div class="step">First: leave for Battersea with kit</div>
+        <div class="time">13:00–14:45</div>
+        <div class="title">Therapy</div>
+        <div class="step">First: leave ~12:25 for 100 Bell St</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-28-v2";
+  var KEY = "ed-today-2026-09-29-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
