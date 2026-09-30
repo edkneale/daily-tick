@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Tue 29 Sep</title>
+<title>Today · Wed 30 Sep</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,61 +38,65 @@
 </style>
 </head>
 <body>
-  <h1>Today · Tue 29 Sep</h1>
-  <div class="quiet">Therapy · Cadent + Chris desk before leave</div>
+  <h1>Today · Wed 30 Sep</h1>
+  <div class="quiet">Haircut · Cadent + Chris desk after return</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">13:00–14:45</div>
-      <div class="what">Therapy</div>
-      <div class="where">100 Bell St, London NW1 6SL</div>
-      <div class="nested">Leave: aim ~12:25 from N5</div>
+      <div class="time">10:00–11:00</div>
+      <div class="what">Haircut — ESHK Barbican</div>
+      <div class="where">ESHK Barbican, London</div>
+      <div class="nested">Leave: aim 9:40 from N5</div>
     </div>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Wed 30 · 10:00</div>
-      <div class="what">Haircut — ESHK Barbican</div>
-      <div class="where">Leave 9:40</div>
-    </div>
-    <div class="slot">
       <div class="time">Thu 1 Oct · morning</div>
       <div class="what">Golf with Paddy &amp; Guy</div>
       <div class="where">Finchley Golf Club</div>
+    </div>
+    <div class="slot">
+      <div class="time">Fri 2 Oct</div>
+      <div class="what">Drive to Wales</div>
+      <div class="where">Toward Alberbury / Shrewsbury</div>
+    </div>
+    <div class="slot">
+      <div class="time">Sat 3 Oct</div>
+      <div class="what">Alberbury Centenary Awards Night</div>
     </div>
   </div>
 
   <div class="card">
     <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
+    <button type="button" class="job" data-id="breakfast" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">Now–09:30</div>
+        <div class="title">Breakfast</div>
+        <div class="step">First: eat before leave (Elvanse after haircut)</div>
+      </div></div>
+    </button>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">10:30–11:15</div>
+        <div class="time">12:00–12:45</div>
         <div class="title">Email Benjamin — Cadent</div>
-        <div class="step">First: open/send quote questions on the £684 survey</div>
+        <div class="step">First: open draft · put £684 incl VAT · send</div>
       </div></div>
     </button>
     <button type="button" class="job" data-id="chris" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">11:30–12:00</div>
+        <div class="time">13:00–13:30</div>
         <div class="title">Chase Chris — railing</div>
         <div class="step">First: message Chris for the railing numbers</div>
-      </div></div>
-    </button>
-    <button type="button" class="job" data-id="therapy" aria-pressed="false">
-      <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">13:00–14:45</div>
-        <div class="title">Therapy</div>
-        <div class="step">First: leave ~12:25 for 100 Bell St</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-09-29-v1";
+  var KEY = "ed-today-2026-09-30-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
