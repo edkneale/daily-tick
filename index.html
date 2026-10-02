@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Thu 1 Oct</title>
+<title>Today · Fri 2 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,26 +38,21 @@
 </style>
 </head>
 <body>
-  <h1>Today · Thu 1 Oct</h1>
-  <div class="quiet">Golf Finchley · Benjamin + Wales pack after</div>
+  <h1>Today · Fri 2 Oct</h1>
+  <div class="quiet">Wales drive · Awards tomorrow 18:30</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">08:00–13:00</div>
-      <div class="what">Golf with Paddy &amp; Guy</div>
-      <div class="where">Finchley Golf Club</div>
-      <div class="nested">Leave: clubs/kit in car · head to Finchley</div>
+      <div class="time">All day</div>
+      <div class="what">Drive to Wales</div>
+      <div class="where">Toward Alberbury / Shrewsbury</div>
+      <div class="nested">Leave: overnight bag + charger + keys in car</div>
     </div>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
-    <div class="slot">
-      <div class="time">Fri 2 Oct</div>
-      <div class="what">Drive to Wales</div>
-      <div class="where">Toward Alberbury / Shrewsbury</div>
-    </div>
     <div class="slot">
       <div class="time">Sat 3 Oct · 18:30</div>
       <div class="what">Alberbury Centenary Awards Night</div>
@@ -67,32 +62,32 @@
 
   <div class="card">
     <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
-    <button type="button" class="job" data-id="golf" aria-pressed="false">
+    <button type="button" class="job" data-id="leave" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">08:00–13:00</div>
-        <div class="title">Golf — Finchley</div>
-        <div class="step">First: clubs/kit in car · leave for Finchley</div>
+        <div class="time">Now–08:30</div>
+        <div class="title">Final check + leave</div>
+        <div class="step">First: overnight bag + charger + keys in car</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="benjamin" aria-pressed="false">
+    <button type="button" class="job" data-id="drive" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">14:00–14:30</div>
-        <div class="title">Email Benjamin — Cadent</div>
-        <div class="step">First: open draft · put £684 incl VAT · send</div>
+        <div class="time">08:30–arrival</div>
+        <div class="title">Drive to Wales</div>
+        <div class="step">First: fuel if needed · head toward Shrewsbury</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="wales-pack" aria-pressed="false">
+    <button type="button" class="job" data-id="settle" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">14:45–15:15</div>
-        <div class="title">Wales pack</div>
-        <div class="step">First: overnight bag + charger by the door</div>
+        <div class="time">After arrival</div>
+        <div class="title">Settle</div>
+        <div class="step">First: drop bag · confirm Sat Awards 18:30 venue</div>
       </div></div>
     </button>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-01-v1";
+  var KEY = "ed-today-2026-10-02-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
