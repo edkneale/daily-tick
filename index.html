@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Tue 6 Oct</title>
+<title>Today · Wed 7 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,21 +38,19 @@
 </style>
 </head>
 <body>
-  <h1>Today · Tue 6 Oct</h1>
-  <div class="quiet">Therapy on Teams today · admin carried from Monday</div>
+  <h1>Today · Wed 7 Oct</h1>
+  <div class="quiet">Open day · clear the admin chases + ship the Vinted sale</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">13:00–13:55</div>
-      <div class="what">Therapy · Louise (single session)</div>
-      <div class="where">Microsoft Teams, from home (not Bell St)</div>
-      <div class="nested">Link is in Louise's "Teams link" email and the calendar invite</div>
+      <div class="what">Nothing fixed today</div>
+      <div class="where">Breakfast before 10 · Elvanse 10:00 · lunch ~14:00</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
+    <div class="head">Do today <span class="progress" id="progress">0 / 4</span></div>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">10:30–10:45</div>
@@ -60,25 +58,39 @@
         <div class="step">First: open the draft · swap in £684 incl VAT · send</div>
       </div></div>
     </button>
+    <button type="button" class="job" data-id="vinted" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">10:45–11:00</div>
+        <div class="title">Ship the New Balance 475 (Vinted)</div>
+        <div class="step">First: open the Vinted email · get the prepaid label</div>
+      </div></div>
+    </button>
     <button type="button" class="job" data-id="chris" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">10:45–10:55</div>
+        <div class="time">11:00–11:10</div>
         <div class="title">Chase Chris railing measurements</div>
         <div class="step">First: text Chris asking for the measurements</div>
       </div></div>
     </button>
     <button type="button" class="job" data-id="fred" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">11:00–11:15</div>
+        <div class="time">11:15–11:30</div>
         <div class="title">Chase Fred re door</div>
         <div class="step">First: message Fred: options besides PVC? Can I source it?</div>
       </div></div>
     </button>
   </div>
 
+  <div class="card">
+    <div class="head">Coming up</div>
+    <div class="slot">
+      <div class="what">Nothing calendared Thu 8 – Fri 9</div>
+    </div>
+  </div>
+
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-06-v1";
+  var KEY = "ed-today-2026-10-07-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
