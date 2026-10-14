@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Tue 13 Oct</title>
+<title>Today · Wed 14 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,16 +38,14 @@
 </style>
 </head>
 <body>
-  <h1>Today · Tue 13 Oct</h1>
-  <div class="quiet">Three chases · therapy · threshold run</div>
+  <h1>Today · Wed 14 Oct</h1>
+  <div class="quiet">Three chases · sub-threshold bike</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">13:00–13:55</div>
-      <div class="what">Therapy</div>
-      <div class="where">100 Bell St, London NW1 6SL</div>
-      <div class="nested">Leave: allow travel time before 13:00</div>
+      <div class="what">Nothing fixed today</div>
+      <div class="where">Clear diary · blocks below</div>
     </div>
   </div>
 
@@ -74,11 +72,11 @@
         <div class="step">First: message Fred: options besides PVC? Can I source it?</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="threshold-run" aria-pressed="false">
+    <button type="button" class="job" data-id="subthreshold-bike" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">14:30–15:45</div>
-        <div class="title">Threshold run 1:03 (TP)</div>
-        <div class="step">First: kit on · 15 min Z2 warm-up, then threshold efforts as written</div>
+        <div class="time">15:00–16:15</div>
+        <div class="title">Sub-threshold bike 1:04 (TP)</div>
+        <div class="step">First: bike on the trainer · 10 min Z2 warm-up, then 18/15/10 min upper Z3</div>
       </div></div>
     </button>
   </div>
@@ -86,18 +84,22 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Wed 14</div>
-      <div class="what">TP: sub-threshold bike 1:04</div>
-    </div>
-    <div class="slot">
       <div class="time">Thu 15</div>
       <div class="what">TP: pool swim aerobic 1:19 / 3400 m</div>
+    </div>
+    <div class="slot">
+      <div class="time">Fri 16</div>
+      <div class="what">TP: rest day</div>
+    </div>
+    <div class="slot">
+      <div class="time">Tue 17 Nov</div>
+      <div class="what">Fly VS478 LHR 22:30 → Cape Town 12:05 Wed 18</div>
     </div>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-13-v1";
+  var KEY = "ed-today-2026-10-14-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
