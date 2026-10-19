@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Fri 16 Oct</title>
+<title>Today · Mon 19 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,15 +38,22 @@
 </style>
 </head>
 <body>
-  <h1>Today · Fri 16 Oct</h1>
-  <div class="quiet">Rest day · three short admin blocks</div>
+  <h1>Today · Mon 19 Oct</h1>
+  <div class="quiet">McIvor first thing · two short admin blocks · bike + run · art tonight</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">All day</div>
-      <div class="what">TP: rest day</div>
-      <div class="where">Nothing fixed on the calendar</div>
+      <div class="time">09:00–10:00</div>
+      <div class="what">Dr McIvor</div>
+      <div class="where">17 Cavendish Square</div>
+      <div class="nested">Leave ~08:20 · Elvanse with you for 10:00</div>
+    </div>
+    <div class="slot">
+      <div class="time">18:30–21:15</div>
+      <div class="what">Art class Battersea</div>
+      <div class="where">London Fine Art Studios, Lavender Hill</div>
+      <div class="nested">Leave 17:15</div>
     </div>
   </div>
 
@@ -54,23 +61,23 @@
     <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">10:30–10:45</div>
+        <div class="time">11:00–11:15</div>
         <div class="title">Email Benjamin re Cadent</div>
-        <div class="step">First: open the draft · swap in £684 incl VAT · send</div>
+        <div class="step">First: open the 13 Oct Alfred card (£684 in) · press Send</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="ian-doors" aria-pressed="false">
+    <button type="button" class="job" data-id="chris-railing" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">10:45–11:00</div>
-        <div class="title">Decide Ian doors</div>
-        <div class="step">First: open quote · reply or park with Dad · front £1,960 · back £1,985</div>
+        <div class="time">11:15–11:25</div>
+        <div class="title">Text Chris for railing measurements</div>
+        <div class="step">First: open the Chris thread · ask for the measurements</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="mcivor-cal" aria-pressed="false">
+    <button type="button" class="job" data-id="tp-bike-run" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">11:00–11:10</div>
-        <div class="title">Put Dr McIvor in calendar</div>
-        <div class="step">First: add Mon 19 Oct 09:00 · 17 Cavendish Square</div>
+        <div class="time">15:00–16:15</div>
+        <div class="title">TP bike 0:57 + run off bike 0:15</div>
+        <div class="step">First: kit on · 7 × 5 min upper Z2, then 15 min easy Z2 run</div>
       </div></div>
     </button>
   </div>
@@ -78,22 +85,13 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Sat 17</div>
-      <div class="what">TP brick: bike 2:45 + run off bike 1:15</div>
+      <div class="time">Tue 20 · 13:00</div>
+      <div class="what">Therapy · 100 Bell Street</div>
+      <div class="where">TP: threshold run 1:03</div>
     </div>
     <div class="slot">
-      <div class="time">Sun 18</div>
-      <div class="what">TP open water swim 0:45 / 2000 m</div>
-      <div class="where">Easy Z2 · first OWS</div>
-    </div>
-    <div class="slot">
-      <div class="time">Mon 19 · 09:00</div>
-      <div class="what">Dr McIvor · 17 Cavendish Square</div>
-    </div>
-    <div class="slot">
-      <div class="time">Mon 19 · 18:30</div>
-      <div class="what">Art class Battersea</div>
-      <div class="nested">Leave nested: travel 17:15</div>
+      <div class="time">Wed 21</div>
+      <div class="what">TP sub-threshold bike 1:06</div>
     </div>
     <div class="slot">
       <div class="time">Mon 26</div>
@@ -107,7 +105,7 @@
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-16-v1";
+  var KEY = "ed-today-2026-10-19-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
