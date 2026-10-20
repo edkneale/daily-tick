@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Mon 19 Oct</title>
+<title>Today · Tue 20 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,20 +38,20 @@
 </style>
 </head>
 <body>
-  <h1>Today · Mon 19 Oct</h1>
-  <div class="quiet">Morning out · two short admin blocks · bike + run · class tonight</div>
+  <h1>Today · Tue 20 Oct</h1>
+  <div class="quiet">Two short admin blocks · out midday · threshold run</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">09:00–10:00</div>
-      <div class="what">Appointment (out)</div>
-      <div class="nested">Leave 08:20</div>
+      <div class="time">08:25–14:25</div>
+      <div class="what">Parcel due</div>
+      <div class="nested">Window overlaps midday out</div>
     </div>
     <div class="slot">
-      <div class="time">18:30–21:15</div>
-      <div class="what">Art class</div>
-      <div class="nested">Leave 17:15</div>
+      <div class="time">13:00–13:55</div>
+      <div class="what">Personal (out)</div>
+      <div class="nested">Leave ~12:20</div>
     </div>
   </div>
 
@@ -71,11 +71,11 @@
         <div class="step">First: open the Chris thread · ask for the measurements</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="tp-bike-run" aria-pressed="false">
+    <button type="button" class="job" data-id="tp-threshold-run" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">15:00–16:15</div>
-        <div class="title">TP bike 0:57 + run off bike 0:15</div>
-        <div class="step">First: kit on · 7 × 5 min upper Z2, then 15 min easy Z2 run</div>
+        <div class="time">15:30–16:35</div>
+        <div class="title">TP threshold run 1:03</div>
+        <div class="step">First: shoes on · 10 min Z2, then 2 × (4 × 4 min low Z4)</div>
       </div></div>
     </button>
   </div>
@@ -83,13 +83,12 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Tue 20 · 13:00</div>
-      <div class="what">Personal</div>
-      <div class="where">TP: threshold run 1:03</div>
-    </div>
-    <div class="slot">
       <div class="time">Wed 21</div>
       <div class="what">TP sub-threshold bike 1:06</div>
+    </div>
+    <div class="slot">
+      <div class="time">Thu 22</div>
+      <div class="what">TP pool swim 1:09 / 3000 m</div>
     </div>
     <div class="slot">
       <div class="time">Mon 26</div>
@@ -99,7 +98,7 @@
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-19-v1";
+  var KEY = "ed-today-2026-10-20-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
