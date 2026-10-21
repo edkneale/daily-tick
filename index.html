@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Tue 20 Oct</title>
+<title>Today · Wed 21 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,20 +38,14 @@
 </style>
 </head>
 <body>
-  <h1>Today · Tue 20 Oct</h1>
-  <div class="quiet">Two short admin blocks · out midday · easy swim</div>
+  <h1>Today · Wed 21 Oct</h1>
+  <div class="quiet">No fixed events · two short admin blocks · bike</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">08:25–14:25</div>
-      <div class="what">Parcel due</div>
-      <div class="nested">Window overlaps midday out</div>
-    </div>
-    <div class="slot">
-      <div class="time">13:00–13:55</div>
-      <div class="what">Personal (out)</div>
-      <div class="nested">Leave ~12:20</div>
+      <div class="what">Nothing fixed</div>
+      <div class="nested">Home day</div>
     </div>
   </div>
 
@@ -71,11 +65,11 @@
         <div class="step">First: open the Chris thread · ask for the measurements</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="z2-swim" aria-pressed="false">
+    <button type="button" class="job" data-id="tp-bike" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">15:30–16:30</div>
-        <div class="title">Easy Z2 swim 45–60 min (or 60 min Z2 Zwift if no pool)</div>
-        <div class="step">First: swim bag packed</div>
+        <div class="time">15:30–16:40</div>
+        <div class="title">TP sub-threshold bike 1:06</div>
+        <div class="step">First: bike on the trainer · Zwift open</div>
       </div></div>
     </button>
   </div>
@@ -83,12 +77,12 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Wed 21</div>
-      <div class="what">TP sub-threshold bike 1:06</div>
-    </div>
-    <div class="slot">
       <div class="time">Thu 22</div>
       <div class="what">TP pool swim 1:09 / 3000 m</div>
+    </div>
+    <div class="slot">
+      <div class="time">Fri 23</div>
+      <div class="what">TP rest day</div>
     </div>
     <div class="slot">
       <div class="time">Mon 26</div>
@@ -98,7 +92,7 @@
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-20-v1";
+  var KEY = "ed-today-2026-10-21-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
