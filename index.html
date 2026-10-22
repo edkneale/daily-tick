@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Wed 21 Oct</title>
+<title>Today · Thu 22 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,8 +38,8 @@
 </style>
 </head>
 <body>
-  <h1>Today · Wed 21 Oct</h1>
-  <div class="quiet">No fixed events · two short admin blocks · bike</div>
+  <h1>Today · Thu 22 Oct</h1>
+  <div class="quiet">No fixed events · three short admin blocks · pool swim</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
@@ -50,7 +50,14 @@
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 3</span></div>
+    <div class="head">Do today <span class="progress" id="progress">0 / 4</span></div>
+    <button type="button" class="job" data-id="security" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">10:45–11:00</div>
+        <div class="title">Account security check</div>
+        <div class="step">First: open the dashboard directly (not the email link) · rotate keys</div>
+      </div></div>
+    </button>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">11:00–11:15</div>
@@ -65,11 +72,11 @@
         <div class="step">First: open the Chris thread · ask for the measurements</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="tp-bike" aria-pressed="false">
+    <button type="button" class="job" data-id="tp-swim" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">15:30–16:40</div>
-        <div class="title">TP sub-threshold bike 1:06</div>
-        <div class="step">First: bike on the trainer · Zwift open</div>
+        <div class="title">TP pool swim 1:09 / 3000 m</div>
+        <div class="step">First: swim bag by the door · walk to the pool</div>
       </div></div>
     </button>
   </div>
@@ -77,22 +84,26 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Thu 22</div>
-      <div class="what">TP pool swim 1:09 / 3000 m</div>
-    </div>
-    <div class="slot">
       <div class="time">Fri 23</div>
       <div class="what">TP rest day</div>
+    </div>
+    <div class="slot">
+      <div class="time">Sat 24</div>
+      <div class="what">Brick: race practice ride 2:45 + run off the bike 1:20</div>
     </div>
     <div class="slot">
       <div class="time">Mon 26</div>
       <div class="what">No art class — half-term to 1 Nov</div>
     </div>
+    <div class="slot">
+      <div class="time">Wed 4 Nov</div>
+      <div class="what">Smart meter install 08:00–12:00 (in)</div>
+    </div>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-21-v1";
+  var KEY = "ed-today-2026-10-22-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
