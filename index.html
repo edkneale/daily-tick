@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Tue 27 Oct</title>
+<title>Today · Wed 28 Oct</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,20 +38,20 @@
 </style>
 </head>
 <body>
-  <h1>Today · Tue 27 Oct</h1>
-  <div class="quiet">Half-term · one fixed slot at 13:00 · three admin blocks + run</div>
+  <h1>Today · Wed 28 Oct</h1>
+  <div class="quiet">Admin + bike this morning · away from this evening</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">13:00</div>
-      <div class="what">Personal (out)</div>
-      <div class="nested">Leave 12:15</div>
+      <div class="time">18:00</div>
+      <div class="what">Away (out) until Fri evening</div>
+      <div class="nested">Leave in time to arrive 18:00</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="head">Do today <span class="progress" id="progress">0 / 4</span></div>
+    <div class="head">Do today <span class="progress" id="progress">0 / 5</span></div>
     <button type="button" class="job" data-id="security" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">10:45–11:00</div>
@@ -63,7 +63,7 @@
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">11:00–11:15</div>
         <div class="title">Email Benjamin re house quote</div>
-        <div class="step">First: open the 13 Oct Alfred card · press Send (day 14)</div>
+        <div class="step">First: open the 13 Oct Alfred card · press Send (day 15)</div>
       </div></div>
     </button>
     <button type="button" class="job" data-id="chris-railing" aria-pressed="false">
@@ -73,21 +73,24 @@
         <div class="step">First: open the Chris thread · ask for the measurements</div>
       </div></div>
     </button>
-    <button type="button" class="job" data-id="run" aria-pressed="false">
+    <button type="button" class="job" data-id="bike" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
-        <div class="time">15:30–16:45</div>
-        <div class="title">Threshold run 1:10</div>
-        <div class="step">First: kit on · 15 min easy warm-up</div>
+        <div class="time">11:45–13:00</div>
+        <div class="title">Sub-threshold bike 1:10</div>
+        <div class="step">First: kit on · bike on the trainer</div>
+      </div></div>
+    </button>
+    <button type="button" class="job" data-id="pack" aria-pressed="false">
+      <div class="row"><div class="tick"></div><div class="left">
+        <div class="time">14:30–15:00</div>
+        <div class="title">Pack for away</div>
+        <div class="step">First: bag on the bed · clothes for two nights</div>
       </div></div>
     </button>
   </div>
 
   <div class="card">
     <div class="head">Coming up</div>
-    <div class="slot">
-      <div class="time">Wed 28</div>
-      <div class="what">Sub-threshold bike 1:10 · away from evening</div>
-    </div>
     <div class="slot">
       <div class="time">Thu 29 – Fri 30</div>
       <div class="what">Away (back Fri evening)</div>
@@ -100,7 +103,7 @@
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-27-v1";
+  var KEY = "ed-today-2026-10-28-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
