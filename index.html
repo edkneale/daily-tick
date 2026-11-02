@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Fri 30 Oct</title>
+<title>Today · Mon 2 Nov</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,14 +38,18 @@
 </style>
 </head>
 <body>
-  <h1>Today · Fri 30 Oct</h1>
-  <div class="quiet">Last away day · same three quick phone jobs, back this evening</div>
+  <h1>Today · Mon 2 Nov</h1>
+  <div class="quiet">Home day · four short desk jobs, art class tonight</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="time">Until 18:00</div>
-      <div class="what">Away (out) · back this evening</div>
+      <div class="time">17:15</div>
+      <div class="what">Leave for art class</div>
+    </div>
+    <div class="slot">
+      <div class="time">18:30–21:15</div>
+      <div class="what">Art class</div>
     </div>
   </div>
 
@@ -55,14 +59,14 @@
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">10:45–10:55</div>
         <div class="title">Reply Russell re 7 Nov golf</div>
-        <div class="step">First: open the Alfred draft · check handicap + dietary · Send</div>
+        <div class="step">First: open the Alfred draft · check handicap + dietary · Send (golf is Sat)</div>
       </div></div>
     </button>
     <button type="button" class="job" data-id="benjamin" aria-pressed="false">
       <div class="row"><div class="tick"></div><div class="left">
         <div class="time">11:00–11:15</div>
         <div class="title">Email Benjamin re house quote</div>
-        <div class="step">First: open the 13 Oct Alfred card · press Send (day 17)</div>
+        <div class="step">First: open the 13 Oct Alfred card · press Send (day 20)</div>
       </div></div>
     </button>
     <button type="button" class="job" data-id="chris-railing" aria-pressed="false">
@@ -84,8 +88,8 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Sat 31 · 09:00–12:00</div>
-      <div class="what">Drive to Lucy's</div>
+      <div class="time">Tue 3 · 13:00</div>
+      <div class="what">Personal (out)</div>
     </div>
     <div class="slot">
       <div class="time">Wed 4 Nov</div>
@@ -99,7 +103,7 @@
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-10-30-v1";
+  var KEY = "ed-today-2026-11-02-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
