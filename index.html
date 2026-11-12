@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#f4f3ef"/>
-<title>Today · Wed 11 Nov</title>
+<title>Today · Thu 12 Nov</title>
 <style>
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body { margin: 0; padding: max(16px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
@@ -38,13 +38,14 @@
 </style>
 </head>
 <body>
-  <h1>Today · Wed 11 Nov</h1>
-  <div class="quiet">Two sends · swim</div>
+  <h1>Today · Thu 12 Nov</h1>
+  <div class="quiet">Two sends</div>
 
   <div class="card">
     <div class="head">What have I got on today?</div>
     <div class="slot">
-      <div class="what">Nothing fixed today</div>
+      <div class="what">Move car (all day)</div>
+      <div class="nested">10:00 Appointment</div>
     </div>
   </div>
 
@@ -69,15 +70,14 @@
   <div class="card">
     <div class="head">Coming up</div>
     <div class="slot">
-      <div class="time">Thu 12 Nov</div>
-      <div class="what">Move car (all day)</div>
-      <div class="nested">10:00 Appointment</div>
+      <div class="time">Sun 22 Nov</div>
+      <div class="what">Race day</div>
     </div>
   </div>
 
 <script>
 (function(){
-  var KEY = "ed-today-2026-11-11-v1";
+  var KEY = "ed-today-2026-11-12-v1";
   var jobs = [].slice.call(document.querySelectorAll(".job"));
   var progress = document.getElementById("progress");
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)||"{}"); } catch(e){ return {}; } }
